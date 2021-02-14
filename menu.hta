@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+  <TITLE>HTA Demo</TITLE>
+    <HTA:APPLICATION ID="oHTA"
+     APPLICATIONNAME="myApp"
+     BORDER="thin"
+     BORDERSTYLE="normal"
+     CAPTION="yes"
+     ICON=""
+     MAXIMIZEBUTTON="yes"
+     MINIMIZEBUTTON="yes"
+     SHOWINTASKBAR="no"
+     SINGLEINSTANCE="no"
+     SYSMENU="yes"
+     VERSION="1.0"
+     WINDOWSTATE="maximize"/>
+
+  <SCRIPT>
+
+  /* This function also retrieves the value of the commandLine property,
+     which cannot be set as an attribute.  */
+   
+  function window.onload(){
+  	var w = 300;
+	var h = 350;
+	var left = Number((screen.width/2)-(w/2));
+	var top = Number((screen.height/2)-(h/2));
+  	window.resizeTo(w, h);
+  	window.moveTo(left, top);
+  }
+  function exec(cmd) {
+  	var WShell = new ActiveXObject('WScript.Shell');
+	WShell.run('cmd /C ' + cmd + ' && exit');
+	window.close();
+  }
+  </SCRIPT>
+</HEAD>
+<BODY SCROLL="no">
+	<div align="center">
+		<button onclick="exec('start BaixarVideo.bat');"><h3>Baixar um Video</h3></button><br>
+		<button onclick="exec('start BaixarPlaylist.bat');"><h3>Baixar uma Playlist</h3></button><br>
+		<button onclick="exec('start AutoDownload.bat');"><h3>Auto Download</h3></button><br>
+		<button onclick="exec('start Converter_em_musica.bat');"><h3>Converter em Musica</h3></button><br><br>
+		<button onclick="window.close()"><h3>Sair do menu</h3></button>
+	</div>
+</BODY>
+</HTML>
