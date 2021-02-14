@@ -1,7 +1,0 @@
-﻿Youtube Video Downloader by Julio Delfino
-
-Para usar o programa execute o arquivo menu.hta
-
-Se escolher baixar uma playlist cole o link de qualquer video dela.
-
-Dica: se quiser baixar varios videos use o auto download e vá copiando o link dos videos.
